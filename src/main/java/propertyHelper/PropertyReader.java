@@ -9,14 +9,14 @@ import java.util.Properties;
 public class PropertyReader {
     private static Properties properties;
 
-    public PropertyReader(String propertyName) { // конструктор, который отвечает за работу проперти с файловой системой
+    public PropertyReader(String propertyName) {
         properties = new Properties();
         if (propertyName == null || propertyName.isEmpty()) {
             log.error("Please check your -Dconfig value.");
         }
 
         try {
-            FileInputStream inputStream = new FileInputStream("src/main/resources/" + propertyName + ".properties");//забираем файл из файловой системы
+            FileInputStream inputStream = new FileInputStream("src/main/resources/" + propertyName + ".properties");
             properties.load(inputStream);
         } catch (IOException e) {
             e.printStackTrace();

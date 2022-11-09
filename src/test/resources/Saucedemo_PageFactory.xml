@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SauceDemo with Page Factory" thread-count="2" parallel="tests">
+
+    <test name="Value Object pattern tests set 1.1">
+        <classes>
+            <class name="sausedemo_PageFactory_tests.SD_LoginValueObject_Test"></class>
+            <class name="sausedemo_PageFactory_tests.SD_CheckoutValueObject_Test"></class>
+        </classes>
+    </test>
+
+    <test name="Builder pattern tests set 1.2">
+        <classes>
+            <class name="sausedemo_PageFactory_tests.SD_LoginBuilder_Test"></class>
+            <class name="sausedemo_PageFactory_tests.SD_CheckoutBuilder_Test"></class>
+        </classes>
+    </test>
+
+</suite>

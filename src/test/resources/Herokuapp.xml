@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Herokuapp all tests" thread-count="3" parallel="tests">
+
+    <test name="Herokuapp tests set 1.1">
+        <classes>
+            <class name="herokuapp_tests.Frame_test"></class>
+            <class name="herokuapp_tests.ScrollPage_test"></class>
+            <class name="herokuapp_tests.DynamicLoading_test"></class>
+            <class name="herokuapp_tests.FileDownload_test"></class>
+        </classes>
+    </test>
+
+    <test name="Herokuapp tests set 1.2">
+        <classes>
+            <class name="herokuapp_tests.FileUpload_test"></class>
+            <class name="herokuapp_tests.DynamicControls_test"></class>
+            <class name="herokuapp_tests.DataTables_test"></class>
+            <class name="herokuapp_tests.AddRemove_test"></class>
+        </classes>
+    </test>
+
+    <test name="Herokuapp tests set 1.3">
+        <classes>
+            <class name="herokuapp_tests.DragAndDropPage_test"></class>
+            <class name="herokuapp_tests.DropdownList_test"></class>
+            <class name="herokuapp_tests.Inputs_test"></class>
+            <class name="herokuapp_tests.MultipleWindows_test"></class>
+        </classes>
+    </test>
+
+</suite>

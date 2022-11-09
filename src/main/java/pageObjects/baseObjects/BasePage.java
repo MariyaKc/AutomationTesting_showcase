@@ -69,7 +69,7 @@ public abstract class BasePage {
         webElement.sendKeys(enterData);
     }
 
-    protected void enter(By locator, CharSequence... enterData) { //по идее должно работать с разными ОС
+    protected void enter(By locator, CharSequence... enterData) {
         log.debug("I'm enter :: " + enterData + ", by locator :: " + locator);
         String os = System.getProperty("os.name");
         if (os.contains("Mac")) {
@@ -154,9 +154,6 @@ public abstract class BasePage {
     protected List<String> getTexts(By locator) {
         log.debug("I'm get texts by  :: " + locator);
         return findElements(locator).stream().map(webElement -> webElement.getText()).collect(Collectors.toList());
-        //через stream() представили коллекцию веб элементов в качестве потока данных
-        //через map перебираем каждый элемент и переделываем его с типа webElement -> webElement.getText() в строку
-        //map представляет собой стрим,через collect(Collectors.toList() переводим в лист
     }
     protected List<String> getTexts(List<WebElement> webElements) {
         log.debug("I'm get texts by  :: " + webElements);
@@ -195,7 +192,7 @@ public abstract class BasePage {
     protected List<Double> getValues(By locator) {
         List<Double> getData = findElements(locator).stream()
                 .map(webElement -> webElement.getText())
-                .map(webElement -> webElement.replaceAll("[^\\d.]+", "")) //все, кроме цифр и точки, + совпадает один или более раз
+                .map(webElement -> webElement.replaceAll("[^\\d.]+", ""))
                 .map(Double::parseDouble).collect(Collectors.toList());
         log.debug("I'm get values by  :: " + getData);
         return getData;
@@ -248,9 +245,8 @@ public abstract class BasePage {
         return findElements(by).stream().map(webElement -> webElement.getAttribute(attribute)).collect(Collectors.toList());
     }
 
-    //говорит о состоянии элемента в текущий момент времени(спрашиваем о состоянии NotExist)
     public Boolean elementNotExist(By by) {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0)); //отключаем implicitlyWait(драйвер не ждет выполнения элемента)
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         for (int counter = 1; counter < 20; counter++) {
             log.debug("Wait element not exist count = " + counter);
             if (findElements(by).size() == 0) {
@@ -259,7 +255,7 @@ public abstract class BasePage {
             }
             waitUntil(1);
         }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); //подключаем обратно, чтобы его использовали другие методы
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         return false;
     }
 
@@ -331,11 +327,9 @@ public abstract class BasePage {
         Comparator<String> comparator = new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
-                // если строки разной длины, то более короткая
                 if (o1.length() != o2.length())
                     return Integer.compare(o1.length(), o2.length());
                 else
-                    //если длины равны - сравниваем как строки
                     return o1.compareTo(o2);
             }
         };

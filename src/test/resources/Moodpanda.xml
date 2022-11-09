@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Moodpanda tests(Selenide)" thread-count="4" parallel="tests">
+
+
+    <test name="Login test set 1.1">
+        <classes>
+            <class name="moodpanda_tests.Login_Test"></class>
+        </classes>
+    </test>
+
+    <test name="SignUp test set 1.2">
+        <classes>
+            <class name="moodpanda_tests.SignUp_Test"></class>
+        </classes>
+    </test>
+
+    <test name="Navigation test set 1.3">
+        <classes>
+            <class name="moodpanda_tests.Navigation_Test"></class>
+        </classes>
+    </test>
+</suite>

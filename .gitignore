@@ -1,3 +1,5 @@
 AutomationTesting_showcase.iml
 .idea
 target
+build
+allure-results
