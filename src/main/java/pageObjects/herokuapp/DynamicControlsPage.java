@@ -29,10 +29,6 @@ public class DynamicControlsPage extends BasePage {
     }
 
     public DynamicControlsPage verifyCheckBoxIsNotExist() {
-        //долгое ожидание у обоих методов
-        //Assert.assertEquals(driver.findElements(checkBox).size(),0);
-        //wait.until(ExpectedConditions.not(ExpectedConditions.visibilityOfElementLocated(checkBox)));
-
         fluentWait(30, 1).until(driver -> ExpectedConditions.not(ExpectedConditions.visibilityOfElementLocated(checkBox)));
         return this;
     }

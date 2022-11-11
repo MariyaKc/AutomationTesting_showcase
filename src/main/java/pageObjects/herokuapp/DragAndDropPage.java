@@ -16,9 +16,6 @@ public class DragAndDropPage extends BasePage {
     private final WebElement elementA = driver.findElement(By.id("column-a"));
     private final WebElement elementB = driver.findElement(By.id("column-b"));
 
-    /**
-     * Срабатывает, только если в момент выполнения теста курсор находится там, куда нужно перетащить элемент
-     */
     public DragAndDropPage FromAToB() throws IOException {
         //actions.dragAndDrop(elementA, elementB).build().perform();
         String filePath = System.getProperty("user.dir") + "/files/drag_and_drop_helper.js";

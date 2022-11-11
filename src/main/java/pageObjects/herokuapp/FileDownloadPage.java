@@ -43,8 +43,8 @@ public class FileDownloadPage extends BasePage {
     public FileDownloadPage verifyLastFileInDirectory() {
         File lastFile = getLastDownloadFileInDirectory();
         log.debug("I'm found file :: " + lastFile.getName());
-        Assert.assertTrue(lastFile.exists()); //проверка
-        lastFile.deleteOnExit(); //удаление
+        Assert.assertTrue(lastFile.exists());
+        lastFile.deleteOnExit();
         return this;
     }
 }

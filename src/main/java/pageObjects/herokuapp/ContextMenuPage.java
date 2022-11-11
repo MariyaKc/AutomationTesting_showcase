@@ -9,14 +9,14 @@ public class ContextMenuPage extends BasePage {
     private By hotSpotMenu = By.id("hot-spot");
 
     public ContextMenuPage clickContext() {
-        actions.contextClick(driver.findElement(hotSpotMenu)).build().perform();//клик правой кнопкой
+        actions.contextClick(driver.findElement(hotSpotMenu)).build().perform();
         return this;
     }
 
 
     public ContextMenuPage verifyAlert(String expectedText) {
-        Alert alert = driver.switchTo().alert();//переключение на алерт
-        Assert.assertEquals(alert.getText(), expectedText); //проверить текст
+        Alert alert = driver.switchTo().alert();
+        Assert.assertEquals(alert.getText(), expectedText);
         alert.accept();// закрыть
         return this;
     }

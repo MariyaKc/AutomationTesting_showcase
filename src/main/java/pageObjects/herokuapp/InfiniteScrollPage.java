@@ -9,7 +9,7 @@ public class InfiniteScrollPage extends BasePage {
     //скролл по количеству count
     public InfiniteScrollPage infiniteScroll(Integer count) {
         for (int i = 0; i < count; i++) {
-            actions.scrollToElement(driver.findElement(pageFooter)).build().perform(); //.build().perform() фиксирует чтобы actions срабатывал, обязательное условие
+            actions.scrollToElement(driver.findElement(pageFooter)).build().perform();
         }
         return this;
     }

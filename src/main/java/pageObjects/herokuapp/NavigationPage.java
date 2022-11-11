@@ -13,12 +13,6 @@ public class NavigationPage extends BasePage {
         return this;
     }
 
-    //для параметризованных тестами
-    public NavigationPage open(String url) {//урл в xml файле
-        driver.get(url);
-        return this;
-    }
-
     public void navigateTo(NavigationItems navigationItem) {
         click(getByLink(navigationItem.getItem()));
     }
