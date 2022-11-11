@@ -35,24 +35,67 @@
 ### Architecture:
 * **/files** - includes html pages, requests,jsonschema and test files.
 
-* /src/main/java...
-  * **/cucumberSteps** - contains classes with tests that use Cucumber library.
-  * **/driver** - contains classes for driver management, creates Chrome and Firefox drivers.
-  * **/MySQL** - contains classes for work with SQL table.
-  * **/pageFactory** - contains classes for implementing the Page Factory pattern.
-  * **/pageObjects** - contains test logic with the implementation of the Page Objects pattern.
-  * **/propertyHelper** - contains a PropertyReader to read from properties,These properties are used in Listener.
-  * **/testNgUtils** - contains Listeners.
+* /src/main/java.../
+  * **cucumberSteps** - contains classes with tests that use Cucumber library.
+  * **driver** - contains classes for driver management, creates Chrome and Firefox drivers.
+  * **MySQL** - contains classes for work with SQL table.
+  * **pageFactory** - contains classes for implementing the Page Factory pattern.
+  * **pageObjects** - contains test logic with the implementation of the Page Objects pattern.
+  * **propertyHelper** - contains a PropertyReader to read from properties,These properties are used in Listener.
+  * **testNgUtils** - contains Listeners.
 * src//main/**resources** - contains properties files with data for tests (url, browser type ...).
 
 
-* **/src/test/java** - contains packages with tests
+* **/test/java** - contains packages with tests
 * **/src/test/resources** - contains xml files then used to run tests; and contains properties for Allure Report and configurations for log4j reporting.
 * **/src/test/resources/features** - contains feature files for Cucumber tests.
 
 
 * **Dockerfile** - a file with instructions needed to create a container image.
-* **Jenkins** - Jenkins configuration file.
+* **Jenkinsfile** - Jenkins configuration file.
 * **pom.xml** - contains information about the project and configuration details used by Maven to build the project.
 ---
+### How to run tests :
+The tests are run via **Run Configurations** .xml files or from **Terminal**
+
+* To run tests via the **terminal**, use the command
+
+      mvn clean test -DsuiteXml="XmlName" -Dconfig="propertyFileName"
+
+Where ::  
+* **propertyFileName** - the name of the property file corresponding to the suite with tests
+* **XmlName** - name suite with tests to run
+
+For example :: 
+
+      mvn clean test -DsuiteXml="Saucedemo" -Dconfig="saucedemo"
+
+To run tests via Run Configurations, right-click on the .xml file and select **"Modify Run Configuration..."**
+
+In the window that opens, specify the **properties** to run, for example: 
+![](../../tests run.png)
+
+After that click to run suite::
+
+![](../../run.png)
+ 
+* **LOGS ::** 
+* * All tests at runtime write a log that provides additional information about what happened if they failed. These files are located in target/logs
+
+
+* **ALLURE ::** 
+* * Results for allure reports are located in target/allure results. For view allure-report run this command in Terminal:
+
+       allure serve target/allure-results
+
+If the tests fall, a screenshot will be taken and attached to the Allure Report
+
+* **DOCKER ::**
+* * To run tests in a container, use the command in the terminal :
+
+        sudo docker image build -t selenium-tests:0.0.1 .
+
+The suite with the tests to run can be changed in the Dockerfile
+
+
 
