@@ -73,12 +73,13 @@ For example ::
 To run tests via Run Configurations, right-click on the .xml file and select **"Modify Run Configuration..."**
 
 In the window that opens, specify the **properties** to run, for example: 
-![](../../tests run.png)
+
+<img width="723" alt="tests run" src="https://user-images.githubusercontent.com/111488221/201338242-4cec053a-c45f-44b8-9328-8f8bb89ee562.png">
 
 After that click to run suite::
 
-![](../../run.png)
- 
+ <img width="360" alt="run" src="https://user-images.githubusercontent.com/111488221/201338266-cd30bf23-bf72-4d40-906f-d171cb15300c.png">
+
 * **LOGS ::** 
 * * All tests at runtime write a log that provides additional information about what happened if they failed. These files are located in target/logs
 
