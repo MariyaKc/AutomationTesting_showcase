@@ -10,7 +10,7 @@ import testNgUtils.Retry;
 public class SD_SocialMedia_Test extends BaseTest {
 
     @BeforeMethod
-    public void preconditions(){
+    public void preconditions() {
         get(LoginSteps.class).login();
     }
 

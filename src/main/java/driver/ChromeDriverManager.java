@@ -9,7 +9,7 @@ import java.util.Properties;
 
 import static propertyHelper.PropertyReader.getProperties;
 
-public class ChromeDriverManager extends DriverManager{
+public class ChromeDriverManager extends DriverManager {
     @Override
     public void createDriver() {
         WebDriver driver;

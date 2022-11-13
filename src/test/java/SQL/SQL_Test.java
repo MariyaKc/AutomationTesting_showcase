@@ -5,11 +5,14 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import static MySQL.SelectHelper.getSelect;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.List;
 import java.util.Map;
 
+import static MySQL.SelectHelper.getSelect;
 
 
 public class SQL_Test {
@@ -25,10 +28,12 @@ public class SQL_Test {
         print(getSelect().select("*").from("Pets").getData());
     }
 
-    /** Создать таблицу */
+    /**
+     * Создать таблицу
+     */
     @Test(enabled = false)
     public void createTable_Test() {
-        createTable( "CREATE TABLE Pets " +
+        createTable("CREATE TABLE Pets " +
                 "(PetsID INTEGER not NULL, " +
                 " name VARCHAR(255), " +
                 " owner VARCHAR(255), " +
@@ -44,7 +49,9 @@ public class SQL_Test {
     }
 
 
-    /** Реализовать теста (2 - 3) которые выполняют запрос на добавление данных в таблицу */
+    /**
+     * Реализовать теста (2 - 3) которые выполняют запрос на добавление данных в таблицу
+     */
     @Test(priority = 1)
     public void insert1_Test() {
         print(getSelect().select("*").from("Pets").where("owner is null").getData());
@@ -64,7 +71,9 @@ public class SQL_Test {
         print(getSelect().select("*").from("Pets").where("name is null").getData());
     }
 
-    /** Реализовать тесты (2 - 3) которые выполняют запрос на извлечения данных из таблицы */
+    /**
+     * Реализовать тесты (2 - 3) которые выполняют запрос на извлечения данных из таблицы
+     */
 
     @Test(priority = 4)
     public void selectLike_Test() {
@@ -93,7 +102,9 @@ public class SQL_Test {
         });
     }
 
-    /** Реализовать тесты (2 - 3) которые выполняют запрос на редактирование данных таблицы */
+    /**
+     * Реализовать тесты (2 - 3) которые выполняют запрос на редактирование данных таблицы
+     */
     @Test(priority = 7)
     public void update1_Test() {
         print(getSelect().select("*").from("Pets").where("age is null").getData());
@@ -116,7 +127,9 @@ public class SQL_Test {
     }
 
 
-    /** Реализовать тесты (2 - 3) которые выполняют запрос на удаление данных таблицы  */
+    /**
+     * Реализовать тесты (2 - 3) которые выполняют запрос на удаление данных таблицы
+     */
     @Test(priority = 10)
     public void delete1_Test() {
         print(getSelect().select("*").from("Pets").where("species is null").getData());
@@ -160,8 +173,8 @@ public class SQL_Test {
 
     @SneakyThrows
     @AfterTest
-    public void postcondition(){
-        if(connection!=null)
+    public void postcondition() {
+        if (connection != null)
             connection.close();
     }
 

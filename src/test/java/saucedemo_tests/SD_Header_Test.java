@@ -12,7 +12,7 @@ import saucedemo_tests.steps.ProductStep;
 public class SD_Header_Test extends BaseTest {
 
     @BeforeMethod
-    public void preconditions(){
+    public void preconditions() {
         get(LoginSteps.class).login();
     }
 

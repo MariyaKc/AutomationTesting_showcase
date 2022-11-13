@@ -5,8 +5,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.herokuapp.NavigationItems;
-import pageObjects.herokuapp.dataTables.DataTablesPage;
 import pageObjects.herokuapp.NavigationPage;
+import pageObjects.herokuapp.dataTables.DataTablesPage;
 import pageObjects.herokuapp.dataTables.DataTablesPage2;
 
 import java.util.Collections;
@@ -14,8 +14,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static pageObjects.herokuapp.dataTables.DataTablesItems.*;
 import static pageObjects.herokuapp.NavigationItems.DATA_TABLES;
+import static pageObjects.herokuapp.dataTables.DataTablesItems.*;
 
 /**
  * Data Tables

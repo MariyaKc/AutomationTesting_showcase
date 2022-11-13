@@ -39,7 +39,7 @@ public class SelectHelper extends DBConnector {
     @SneakyThrows
     public ResultSet execute() {
         String setWhere = where == null ? "" : " WHERE " + where;
-        return getStatement().executeQuery("SELECT " + select + " FROM " + from +"WHERE" +where);
+        return getStatement().executeQuery("SELECT " + select + " FROM " + from + "WHERE" + where);
     }
 
     @SneakyThrows

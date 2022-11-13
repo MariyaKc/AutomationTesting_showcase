@@ -11,15 +11,15 @@ public class SD_CheckoutValueObject_Test extends BaseTest {
     LoginPage loginPage;
 
     @BeforeMethod
-    public void precondition(){
-        loginPage= new LoginPage();
+    public void precondition() {
+        loginPage = new LoginPage();
         loginPage.open();
     }
 
     @Test(description = "Test (Value Object) with standard user data {username}, {password}")
-    public void CheckoutTest(){
+    public void CheckoutTest() {
 
-        Login_VObject login_VObject = new Login_VObject(){{
+        Login_VObject login_VObject = new Login_VObject() {{
             setUsername("standard_user");
             setPassword("secret_sauce");
         }};
@@ -32,7 +32,7 @@ public class SD_CheckoutValueObject_Test extends BaseTest {
         new HeaderPage().clickBasketBtn();
         new BasketPage().clickCheckout();
 
-        Checkout_VObject checkout_vObject  = new Checkout_VObject() {{
+        Checkout_VObject checkout_vObject = new Checkout_VObject() {{
             setFirstName("FirstName");
             setLastName("lastname");
             setZipCode("12345");

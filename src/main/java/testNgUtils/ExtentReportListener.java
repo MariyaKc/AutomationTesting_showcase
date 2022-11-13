@@ -6,14 +6,17 @@ import com.relevantcodes.extentreports.LogStatus;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-/**Listener для ExtentReport */
+
+/**
+ * Listener для ExtentReport
+ */
 public class ExtentReportListener implements ITestListener {
     private static ExtentReports extentReports;
     private static ExtentTest extentTest;
 
     @Override
     public void onStart(ITestContext context) {
-        extentReports = new ExtentReports(System.getProperty("user.dir") + "/target/" + context.getName() + ".html"); // путь, куда будем записывать репорт+ имя и формат
+        extentReports = new ExtentReports(System.getProperty("user.dir") + "/target/" + context.getName() + ".html");
         extentTest = extentReports.startTest(context.getName());
     }
 

@@ -4,23 +4,23 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pageFactory.saucedemo.LoginPage;
 import pageFactory.saucedemo.ProductPage;
 import pageFactory.saucedemo.entity.LoginBuilder;
 import pageObjects.baseObjects.BaseTest;
-import pageFactory.saucedemo.LoginPage;
 
 public class SD_LoginBuilder_Test extends BaseTest {
     LoginPage loginPage;
 
     @BeforeMethod
     @Parameters("url")
-    public void precondition(){
+    public void precondition() {
         loginPage = new LoginPage();
         loginPage.open();
     }
 
-    @Test (description = "Test(Builder Pattern) with standard user data {username}, {password}")
-    public void standardUserTest(){
+    @Test(description = "Test(Builder Pattern) with standard user data {username}, {password}")
+    public void standardUserTest() {
 
         LoginBuilder loginBuilder = new LoginBuilder.Builder()
                 .withUsername(properties.getProperty("username"))
@@ -47,8 +47,8 @@ public class SD_LoginBuilder_Test extends BaseTest {
     }
 
     @DataProvider(name = "user data")
-    public Object [][] data(){
-        return new Object[][] {
+    public Object[][] data() {
+        return new Object[][]{
                 {"standard_user", "secret_sauce", ""},
                 {"locked_out_user", "secret_sauce", "Epic sadface: Sorry, this user has been locked out."},
                 {"problem_user", "secret_sauce", ""},

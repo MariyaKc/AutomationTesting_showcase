@@ -8,7 +8,7 @@ import saucedemo_tests.steps.LoginSteps;
 public class SD_Filter_Test extends BaseTest {
 
     @Test(description = "Sorting of products test")
-    public void SortFilterTest(){
+    public void SortFilterTest() {
 
         get(LoginSteps.class).login();
 

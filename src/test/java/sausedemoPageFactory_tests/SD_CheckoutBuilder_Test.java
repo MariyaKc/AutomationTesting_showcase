@@ -11,13 +11,13 @@ public class SD_CheckoutBuilder_Test extends BaseTest {
     LoginPage loginPage;
 
     @BeforeMethod
-    public void precondition(){
-        loginPage= new LoginPage();
+    public void precondition() {
+        loginPage = new LoginPage();
         loginPage.open();
     }
 
     @Test(description = "Test (Builder Pattern) :: with standard user data {username}, {password}")
-    public void checkoutTest(){
+    public void checkoutTest() {
 
         LoginBuilder loginBuilder = new LoginBuilder.Builder()
                 .withUsername("standard_user")

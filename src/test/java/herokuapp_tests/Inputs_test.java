@@ -1,10 +1,11 @@
 package herokuapp_tests;
 
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.herokuapp.InputsPage;
 import pageObjects.herokuapp.NavigationPage;
-import testNgUtils.Listener;
 
 import static pageObjects.herokuapp.NavigationItems.INPUTS;
 

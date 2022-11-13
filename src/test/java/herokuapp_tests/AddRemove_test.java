@@ -1,13 +1,10 @@
 package herokuapp_tests;
 
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.herokuapp.AddRemoveElementsPage;
 import pageObjects.herokuapp.NavigationPage;
-import testNgUtils.Listener;
 
 import static pageObjects.herokuapp.NavigationItems.ADD_REMOVE_ELEMENTS;
 

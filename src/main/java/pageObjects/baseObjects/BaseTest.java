@@ -1,6 +1,5 @@
 package pageObjects.baseObjects;
 
-import driver.DriverManagerFactory;
 import io.github.bonigarcia.wdm.config.DriverManagerType;
 import lombok.extern.log4j.Log4j;
 import org.testng.annotations.AfterTest;
@@ -13,11 +12,13 @@ import testNgUtils.Listener;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
-import static driver.DriverManagerFactory.*;
-import static driver.DriverManager.*;
+import static driver.DriverManager.closeWebDriver;
+import static driver.DriverManagerFactory.getManager;
 import static propertyHelper.PropertyReader.getProperties;
 
-/** класс содержит методы, которые могут быть многократно использованы в конкретных классах страниц */
+/**
+ * класс содержит методы, которые могут быть многократно использованы в конкретных классах страниц
+ */
 @Listeners({Listener.class, InvokedMethodListener.class, ExtentReportListener.class})
 @Log4j
 public abstract class BaseTest {

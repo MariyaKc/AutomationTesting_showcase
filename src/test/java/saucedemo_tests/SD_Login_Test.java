@@ -43,11 +43,11 @@ public class SD_Login_Test extends BaseTest {
                 .enterPassword(password)
                 .clickLoginBtn()
                 .verifyErrorMessage(errorMessage);
-        }
+    }
 
     @DataProvider(name = "user data")
-    public Object [][] data(){
-        return new Object[][] {
+    public Object[][] data() {
+        return new Object[][]{
                 {"standard_user", "secret_sauce", ""},
                 {"locked_out_user", "secret_sauce", "Epic sadface: Sorry, this user has been locked out."},
                 {"problem_user", "secret_sauce", ""},
